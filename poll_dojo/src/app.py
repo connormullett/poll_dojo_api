@@ -14,5 +14,10 @@ def create_app(env_name):
     if env_name == 'production':
         CORS(app)
         Heroku(app)
+
+    # register blueprints
+
+    bcrypt.init_app(app)
+    db.init_app(app)
     
     return app
